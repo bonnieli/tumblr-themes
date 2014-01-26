@@ -1,0 +1,367 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <meta name='text:Disqus Shortname' content='' />
+        <meta name='text:Left Background' content='' />
+        <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            color: #666666;
+            background-color: #F2F2F2;
+            font-size: 9pt;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+            font-weight: 400; }
+            
+        a {
+            color: #000;
+            text-shadow: none;
+            -webkit-transition: 400ms linear 0s;
+            -moz-transition: 400ms linear 0s;
+        	-o-transition: 400ms linear 0s;
+        	transition: 400ms linear 0s;
+        	outline: 0 none;
+            text-decoration: none; }
+            
+        a:hover {
+            text-shadow: 0px 0px 2px transparent, 0px 5px 10px #FAB6CD;}
+            
+        #header {
+            display: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 0.8;
+            -webkit-transition: 400ms linear 0s;
+            -moz-transition: 400ms linear 0s;
+        	-o-transition: 400ms linear 0s;
+        	transition: 400ms linear 0s;
+            background: #fff; }
+            
+        #header:hover {
+            opacity: 1; }
+            
+        #container {
+            position: absolute;
+            padding-top: 20px;
+            left: 40%;
+            width: 60%;
+            box-shadow: inset 5px 0px 10px 0px #aaaaaa;
+            margin: 0 auto; }
+            
+        #Posts {
+            margin-left: 30px;
+            width: 560px; }
+            
+        #sidebar {
+            position: fixed;
+            left: 0;
+            margin: 0;
+            padding-top: 50px;
+            width: 40%; 
+            height: 100%;
+            color: #fff;
+            background-image: url('{text:Left Background}');
+            background-color: #000; }
+            
+        #sidebar a:link, #sidebar a:visited {
+            color: #fff; }
+        
+        .itemwrap {
+            margin-right: 20px;
+            float: right; }
+            
+        .item {
+            display: block;
+            text-transform: uppercase;
+            font-size: 7pt;
+            width: 200px;
+            margin-bottom: 20px;
+            background: transparent;}
+            
+        .navigation {
+            font-family: 'Montserrat', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-size: 10px;
+            background: #FAC7C8; }
+        .navigation a:link, .navigation a:visited {
+            color: #fff; }
+            
+        .nav {
+            list-style-type: none;
+            width: 100%;
+            margin: 0;
+            padding: 0; }
+        .nav li{
+            display: block;
+            background: #000;
+            text-transform: uppercase;
+            padding: 10px; }
+        .nav li:hover {
+            background: #CCC; }
+        
+        
+        .navi {
+            list-style-type: none;
+            margin: 0;
+            padding: 0; }
+        .navi li{
+            display: block; }
+        
+        .header {
+            margin: 20px 0; }
+        
+        .post {
+            padding: 30px;
+            font-size: 10pt;
+            background: #fff;
+            line-height: 14pt;
+            margin-bottom: 10px; }
+            
+        .PostFoot {
+            margin-top: 15px;
+            padding-top: 15px;
+            text-align: right;
+            font-size: 8pt;
+            border-top: 1px solid #ddd; }
+            
+        .date {
+            font-family: 'Montserrat', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            margin-bottom: 10px;
+            font-size: 9pt; }
+            
+        .date a {
+            color: #CCC;
+            font-weight: normal;
+            text-transform: lowercase;
+            text-decoration: none; }
+            
+        .twitter {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background: transparent url('http://static.tumblr.com/1gicxje/Qhnmpfcwj/twitter_grey.png') center top no-repeat; }
+        .twitter:hover {
+            background-image: url('http://static.tumblr.com/1gicxje/3e5mpfd14/twitter_hover.png'); }
+            
+        .quote {
+            font-family: Georgia;
+            font-style: italic;
+            font-size: 15pt; }
+            
+        </style>
+    </head>
+    <body>
+    
+            <div id="sidebar">
+                <div class="itemwrap">
+                
+                <div align="center" class="header"><a href="/"><img src="http://static.tumblr.com/1gicxje/tZfmpf7ot/tumblr_header.png" width="200px" border="0"></a></div>
+                
+                <div class="item" align="center"><img src="{PortraitURL-128}"><p>{Description}</ p></div>
+                
+                <!-- NAVIGATION -->
+                <div class="item">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/ask">Ask</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                </ul>
+                </div>
+                
+                <!-- SOCIAL MEDIA -->
+                <div class="item" align="center">
+                <a href="http://twitter.com/bonnielli" class="twitter" title="Twitter"></a>
+                </div>
+                <!-- NAVIGATION -->
+                <div class="item" align="center">
+                {block:PreviousPage}
+                    <a href="{PreviousPage}">&#171; Prev</a>
+                {/block:PreviousPage} &hearts; 
+                {block:NextPage}
+                    <a href="{NextPage}">Next &#187;</a>
+                {/block:NextPage}
+                </div>
+                </div>
+            </div>
+    
+        <div id="container">
+        
+            <div id="Posts">
+            {block:Posts}
+
+                <div class="post">
+                <!-- DATE -->
+                <div class="date"><a class="dsq-comment-count" href="{Permalink}#disqus_thread" data-disqus-identifier="{Title}-identifier">{block:Date}{ShortMonth} . {MonthNumberWithZero} . {ShortYear} {/block:Date}&nbsp; / &nbsp;Comments</a></div>
+                {block:Text}
+                    <div class="text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </div>
+                {/block:Text}
+
+                {block:Photo}
+                    <div class="photo">
+                        <div align="center">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                        </div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photo}
+
+                {block:Panorama}
+                    <div class="panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Panorama}
+
+                {block:Photoset}
+                    <div class="photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <div class="quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </div>
+                {/block:Quote}
+
+                {block:Link}
+                    <div class="link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </div>
+                {/block:Link}
+
+                {block:Chat}
+                    <div class="chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                {/block:Chat}
+
+                {block:Video}
+                    <div class="video">
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Video}
+
+                {block:Audio}
+                    <div class="audio">
+                        <div align="center">
+                        
+                        {block:AlbumArt}<img src="{AlbumArtURL}" width="200px" />{/block:AlbumArt} <br />
+                        {AudioPlayerBlack}
+                        </div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Audio}
+
+                {block:HasTags}
+                    <div class="PostFoot">
+                        {block:Tags}
+                            <a href="{TagURL}">#{Tag}</a>
+                        {/block:Tags}
+                    </div>
+                {/block:HasTags}
+
+                </div>
+
+
+            {/block:Posts}
+            
+            <!-- 
+                TO-DO: IF DISQUS IS ENABLED, ELSE NOTES. -->
+            
+			<!-- DISQUS -->
+			{block:PermalinkPagination}
+			<script type="text/javascript">
+			var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			  /**
+				* var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+				*/
+			  (function() {
+			   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			   dsq.src = 'http://shortname.disqus.com/embed.js';
+			   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			  })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=shortname">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+			{/block:Permalink}<script type="text/javascript">
+			var disqus_shortname = '{text:Disqus Shortname}';
+			(function () {
+			  var s = document.createElement('script'); s.async = true;
+			  s.src = 'http://shortname.disqus.com/count.js';
+			  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+			</script>
+			{/block:PermalinkPagination} 
+			<!-- END OF DISQUS -->
+            
+            
+            </div>
+        </container>
+
+        <p id="footer">
+            {block:PreviousPage}
+                <a href="{PreviousPage}">&#171; Previous</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a href="{NextPage}">Next &#187;</a>
+            {/block:NextPage}
+        </p>
+    </body>
+</html>
